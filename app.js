@@ -1,7 +1,9 @@
 
 'use-strict';
 
-var hours =  ['6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
+var hours =  ['','6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm','Daily Location Total'];
+var data = [];
+var table = document.getElementById('cookieStats');
 
 function CookiesLocation(minCustomersPerHour, maxCustomersPerHour, avgCookieSalesPerCustomer) {
   this.minCustomersPerHour = minCustomersPerHour;
@@ -21,65 +23,77 @@ function CookiesLocation(minCustomersPerHour, maxCustomersPerHour, avgCookieSale
   this.totalCookiesSoldInADay = 0,
 
   this.output = function(hours){
-    var locationDetails = ['',0];
+    var locationDetails = [];
     var totalCookiesPerDay = 0;
 
-    for (var i=0; i < hours.length; i++){
+    for (var i=1; i < hours.length - 1; i++){
       var cookies = this.cookiesSoldPerHour();
-      locationDetails[i] = [hours[i], `${cookies} cookies`];
+      locationDetails[i] = [`${cookies} cookies`];
       totalCookiesPerDay = totalCookiesPerDay + cookies;
     }
     this.totalCookiesSoldInADay = `${totalCookiesPerDay} cookies`;
+    locationDetails[i] = this.totalCookiesSoldInADay;
     return locationDetails;
   };
 }
-//Create Pike Place Market stats
-var firstAndPike = new CookiesLocation(23,65,6.3);
-var listName = 'firstAndPike';
-writeCookiesPerHour(firstAndPike.output(hours),listName);
-createList('li',listName,'Total', firstAndPike.totalCookiesSoldInADay);
 
-//Create seaTacAirport stats
-var seaTacAirport = new CookiesLocation(3,24,1.2);
-listName = 'seaTacAirport';
-writeCookiesPerHour(seaTacAirport.output(hours),listName);
-createList('li',listName,'Total',seaTacAirport.totalCookiesSoldInADay);
-
-
-//Create seattleCenter stats
-var seattleCenter = new CookiesLocation(11,38,3.7);
-listName = 'seattleCenter';
-writeCookiesPerHour(seattleCenter.output(hours),listName);
-createList('li',listName,'Total',seattleCenter.totalCookiesSoldInADay);
-
-//Create capitolHill stats
-var capitolHill = new CookiesLocation(20,38,2.3);
-listName = 'capitolHill';
-writeCookiesPerHour(capitolHill.output(hours),listName);
-createList('li',listName,'Total',capitolHill.totalCookiesSoldInADay);
-
-//Create capitolHill stats
-var alki = new CookiesLocation(2,16,4.6);
-listName = 'alki';
-writeCookiesPerHour(alki.output(hours),listName);
-createList('li',listName,'Total',alki.totalCookiesSoldInADay);
-
-
-function createList(elementName,appendID,time,cookies){
-  document.getElementById(appendID);
-  //Create an element
-  var liEL = document.createElement(elementName);
-  //Add some value to element
-  liEL.textContent = `${time} : ${cookies}`;
-  //Append new element to it's parent
-  document.getElementById(appendID).appendChild(liEL);
-  liEL = document.createElement(elementName);
+function createRow(hoursArray) {
+  var tempData =[];
+  for(var i=0; i<hoursArray.length; i++) {
+    tempData = tempData + '<td>' + hoursArray[i] + '</td>';
+  }
+  data.push(tempData);
 }
 
-function writeCookiesPerHour(cookiesPerHour, listName){
-  //Create stats
-  for(var i=0 ; i<cookiesPerHour.length;i++)
-  {
-    createList('li', listName,cookiesPerHour[i][0],cookiesPerHour[i][1]);
+function render(tableRow) {
+  for(var j=0; j<tableRow.length;j++){
+    var newRow = document.createElement('tr');
+    newRow.innerHTML = tableRow[j];
+    table.appendChild(newRow);
   }
 }
+
+// Create Header Row
+createRow(hours);
+render(data);
+
+//Create Pike Place Market stats
+var firstAndPike = new CookiesLocation(23,65,6.3);
+var cookieDetails = firstAndPike.output(hours);
+cookieDetails[0]='1st and Pike';
+data = [];
+createRow(cookieDetails);
+render(data);
+
+//Create SeaTac Airport stats
+var seaTacAirport = new CookiesLocation(3,24,1.2);
+cookieDetails = seaTacAirport.output(hours);
+cookieDetails[0]='SeaTac Airport';
+data = [];
+createRow(cookieDetails);
+render(data);
+
+//Create Seattle Center stats
+var seattleCenter = new CookiesLocation(11,38,3.7);
+cookieDetails = seattleCenter.output(hours);
+cookieDetails[0]='Seattle Center';
+data = [];
+createRow(cookieDetails);
+render(data);
+
+//Create Capitol Hill stats
+var capitolHill = new CookiesLocation(20,38,2.3);
+cookieDetails = capitolHill.output(hours);
+cookieDetails[0]='Capitol Hill';
+data = [];
+createRow(cookieDetails);
+render(data);
+
+//Create Alki stats
+var alki = new CookiesLocation(20,38,2.3);
+cookieDetails = alki.output(hours);
+cookieDetails[0]='Alki';
+data = [];
+createRow(cookieDetails);
+render(data);
+

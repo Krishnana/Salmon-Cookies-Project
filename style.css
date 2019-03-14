@@ -23,4 +23,9 @@ li {
     margin-block-end: 1em;
     
 }
+
+td {
+    padding: 20px;
+    border: solid 1px black;
+  }
   
