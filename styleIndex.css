@@ -29,16 +29,6 @@ header img {
 	animation: mymove 1s 1;
 	}
 
-main img{
-	margin-top: 25px;
-	position: relative;
-    width:  200px;
-    height: 200px;
-    background-position: 50% 50%;
-    background-repeat:   no-repeat;
-    background-size:     cover;
-	}
-
 /* Standard syntax */
 @keyframes mymove {
 	from {left: -50px;}
@@ -54,22 +44,64 @@ header nav li	{
 main {
 	width: 960px;
 	margin: 20px auto;
+	position: relative;
 }
 
 .right p {
-	line-height: 26px;
-	height: 300px;
-	overflow: auto;
+	position: absolute;
+	bottom: 8px;
+	top: 80px;
+	left: 16px;
+	font-family: cursive;
 }
 
 footer {
-
 	text-align-last: center;
 	background: rgba(165, 42, 42, 0.973);
 	height: 25px;
 	font-family: helvetica;
-	margin-top: 300px;
+	margin-top: 535px;
 	text-decoration: none;
 	color: #fff;
-	
 }
+
+#cookieStats {
+    margin-block-start: 50px;
+	font-family: 'Sofia';
+	font-size: 14px;
+    width: 400px;
+  }
+
+#cookieStats tr:nth-child(even){background-color: #f2f2f2;}
+
+#cookieStats tr:hover {
+    background-color: #ddd; 
+    color: black;
+}
+
+#cookieStats th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	border: solid 1px black;
+	text-align: center;
+	background-color: rgba(214, 69, 69, 0.973);
+	color: white;
+	font-weight: bolder;
+  }
+  
+  #cookieStats tfoot {   
+	  padding-top: 15px;
+	  padding-bottom: 15px;
+	  border: dashed #f2f2f2;
+	  text-align: center;
+	  background-color: rgba(214, 69, 69, 0.973);
+	  color: white;
+	  font-weight: bolder;
+  }
+  
+  #cookieStats td {
+	  padding: 20px;
+	  border: solid 1px black;
+	  overflow: auto;
+  }
+  
