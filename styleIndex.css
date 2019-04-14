@@ -3,6 +3,7 @@ body {
 	background: rgba(165, 42, 58, 0.089);
 }
 
+
 /* base styles */
 a {
 	text-decoration: none;
@@ -41,6 +42,13 @@ header nav li	{
 	margin-top: 25px;
 }
 
+h3 {
+	margin-top: 50px;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
 main {
 	width: 960px;
 	margin: 20px auto;
@@ -66,13 +74,10 @@ footer {
 }
 
 #cookieStats {
-    margin-block-start: 50px;
 	font-family: 'Sofia';
 	font-size: 14px;
-    width: 400px;
+  width: 400px;
   }
-
-#cookieStats tr:nth-child(even){background-color: #f2f2f2;}
 
 #cookieStats tr:hover {
     background-color: #ddd; 
@@ -80,8 +85,8 @@ footer {
 }
 
 #cookieStats th {
-	padding-top: 12px;
-	padding-bottom: 12px;
+	padding-top: 6px;
+	padding-bottom: 6px;
 	border: solid 1px black;
 	text-align: center;
 	background-color: rgba(214, 69, 69, 0.973);
@@ -90,8 +95,8 @@ footer {
   }
   
   #cookieStats tfoot {   
-	  padding-top: 15px;
-	  padding-bottom: 15px;
+	  padding-top: 6px;
+	  padding-bottom: 6px;
 	  border: dashed #f2f2f2;
 	  text-align: center;
 	  background-color: rgba(214, 69, 69, 0.973);
@@ -100,8 +105,91 @@ footer {
   }
   
   #cookieStats td {
-	  padding: 20px;
+	  padding: 10px;
 	  border: solid 1px black;
 	  overflow: auto;
-  }
-  
+	}
+	
+	#SalesForm  {
+		margin-top: 50px;
+	}
+	
+	.location {
+		margin-top: 50px;
+		position: relative;
+		width:75%;
+	}
+
+	.image {
+		opacity: 1;
+		display: block;
+		width: 100%;
+		height: auto;
+		transition: .5s ease;
+		backface-visibility: hidden;
+	}
+
+	.address {
+		position: absolute;
+		transition: .5s ease;
+		transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		}
+	
+	.location:hover .image {
+		opacity: 0.3;
+	}
+	
+	.location:hover .lines {
+		opacity: 0.9;
+	}
+
+	.lines {
+		position: absolute;
+		opacity: 0;
+		border-radius: 25px;
+		overflow: hidden;
+		background-color: rgba(214, 69, 69, 0.973);
+		color: white;
+		font-size: 16px;
+		padding: 16px 32px;
+		top: 50%;
+		left: 35%;
+	}
+
+	.hours ul {
+		margin-top: 50px;
+		list-style-type: disc;
+		margin-left: 5%;
+    margin-right: 0;
+		padding: 0;
+	}
+
+	input[type=text],[type=number], textarea {
+		width: 100%;
+		padding: 12px;
+		border: 1px solid  rgba(224, 155, 155, 0.973);
+		border-radius: 4px;
+		box-sizing: border-box;
+		margin-top: 6px;
+		margin-bottom: 16px;
+		resize: vertical;
+	}
+	
+	input[type=submit] {
+		background-color: rgba(238, 102, 102, 0.973);
+		color: white;
+		padding: 12px 20px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+	
+	input[type=submit]:hover {
+		background-color: rgba(214, 69, 69, 0.973);
+	}
+	
+	.ContactUsForm {
+		border-radius: 5px;
+		padding: 20px;
+	}
