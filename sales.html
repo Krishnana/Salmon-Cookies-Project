@@ -13,18 +13,46 @@
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Location</a></li>
-                        <li><a href="#">Hours</a></li>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Shop Online</a></li>
+                        <li><a href="location.html">Location</a></li>
+                        <li><a href="hours.html">Hours</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                        <li><a href="order">Shop Online</a></li>
                         <li><a href="sales.html">Sales Information</a></li>
                     </ul>
                 </nav>
             </section>
         </header>
          <main>
+            <!-- all content goes in the body tag -->
+            <h3>Statistics by location:</h3>
+
             <table id = "cookieStats">
             </table>
+            <form id="SalesForm">
+                    <h3>Add a new location:</h3>
+
+                    <fieldset>
+                        <label for="location">Location Name:</label>
+                        <input type="text" name="location" placeholder="Enter location name" minLength="3" required>
+                    </fieldset>
+        
+                    <fieldset>
+                        <label for="minimum">Enter minimum number of cookies expected to sell at this location:</label>
+                        <input type="number" name="minimum" placeholder="minimum number of cookies expected to sell" required>
+                    </fieldset>
+        
+                    <fieldset>
+                        <label for="maximum">Enter maximum number of cookies expected to sell at this location:</label>
+                        <input type="number" name="maximum" placeholder="maximum number of cookies expected to sell" required>
+                    </fieldset>
+        
+                    <fieldset>
+                            <label for="average">Enter average number of cookies expected to sell at this location:</label>
+                            <input type="number" name="average" placeholder="average number of cookies expected to sell" required>
+                    </fieldset>
+                    
+                    <input type="submit" value="Add location">
+                </form>
         </main>
         <script src="app.js"></script>
         <footer>© 2019 SALMON COOKIES ALL RIGHTS RESERVED</footer>

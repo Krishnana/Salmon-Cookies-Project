@@ -22,13 +22,28 @@
                 </nav>
             </section>
         </header>
-        
-        <main  id="img1">
-            <section class="right">
-                <p> Over 35 years ago, I began baking in my own kitchen to provide friends and family with my handmade, gourmet cookies. Today, I still carry on that tradition by using only the finest and freshest ingredients such as premium chocolate, farm fresh butter, Grade A eggs and select California walnuts. And with no preservatives added. Offering a broad assortment of varieties, each irresistible cookie is still handmade in small batches in our bakery with the same homemade goodness as the ones I bake for my own family. Taste for yourself and see why my cookies are… More Than Just a Cookie…</p>
-            </section>
-        </main>
+         <main>
+            <!-- all content goes in the body tag -->
+            <form class="ContactUsForm">
+                <fieldset>
+                    <label for="fname">First Name:</label>
+                    <input type="text" name="firstname" placeholder="Your First Name" minLength="3" required>
+                </fieldset>
+    
+                <fieldset>
+                        <label for="lname">Last Name:</label>
+                        <input type="text" name="lastname" placeholder="Your Last Name" minLength="3" required>
+                </fieldset>
 
+                <fieldset>
+                        <label for="subject">Question/Comments:</label>
+                        <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
+                </fieldset>
+            
+                <input type="submit" value="Submit">
+            </form>
+        </main>
+        
         <footer>© 2019 SALMON COOKIES ALL RIGHTS RESERVED</footer>
     </body>
     
