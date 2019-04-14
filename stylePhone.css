@@ -1,0 +1,7 @@
+main .phone ul{
+    position: absolute;    
+    right:15px;
+    color: black;
+    font-family: cursive;
+    font-style: italic;
+}
