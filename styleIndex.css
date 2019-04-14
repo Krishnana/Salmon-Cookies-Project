@@ -30,7 +30,7 @@ header img {
 	animation: mymove 1s 1;
 	}
 
-/* Standard syntax */
+	/* Standard syntax */
 @keyframes mymove {
 	from {left: -50px;}
 	to {left: 50px;}
@@ -40,6 +40,15 @@ header nav li	{
 	display: inline-block;
 	margin-right: 30px;
 	margin-top: 25px;
+}
+
+h1 {
+	margin-top: 50px;
+	font-size: 40px;
+	font-weight: bold;
+	font-family: cursive;
+	text-align-last: center;
+	margin-bottom: 20px;
 }
 
 h3 {
@@ -55,20 +64,34 @@ main {
 	position: relative;
 }
 
+.cookie {
+	position: absolute;	
+	margin-left: 200px;
+	margin-right: 50px;
+	opacity: 1;
+	width: 75%;	
+}
+
 .right p {
 	position: absolute;
-	bottom: 8px;
-	top: 80px;
-	left: 16px;
+	float:right;
 	font-family: cursive;
+	margin-left: 200px;
+	margin-right: 50px;
+	margin-top: 250px;
+	line-height: 26px;
+	height: 250px;
+	overflow: auto;
 }
 
 footer {
-	text-align-last: center;
+	position:fixed;
+	text-align: center;
 	background: rgba(165, 42, 42, 0.973);
 	height: 25px;
+	bottom:0;
+  width:100%;
 	font-family: helvetica;
-	margin-top: 535px;
 	text-decoration: none;
 	color: #fff;
 }
@@ -118,6 +141,13 @@ footer {
 		margin-top: 50px;
 		position: relative;
 		width:75%;
+	}
+
+	.fish {
+		position: absolute;	
+		margin-left: 200px;
+		opacity: 0.1;
+		width: 50%;	
 	}
 
 	.image {
@@ -193,4 +223,23 @@ footer {
 		border-radius: 5px;
 		padding: 20px;
 	}
+
+	section.otherlinks {
+		margin: 5px;
+		border: 1px solid #ccc;
+		width: 180px;
+	}
 	
+	section.otherlinks:hover {
+		border: 1px solid #777;
+	}
+	
+	section.otherlinks img {
+		width: 100%;
+		height: auto;
+	}
+
+	p.desc {
+		padding: 15px;
+		color: brown;
+	}
